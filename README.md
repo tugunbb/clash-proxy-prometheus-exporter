@@ -104,6 +104,12 @@ Legend填入{{proxy}}，然后点击Run queries
 在右侧选择state timeline面板
 在右侧Thresholds栏删掉已有的指标，选择Add threshold，填入0.5，颜色选择绿色，Base的颜色选择红色，下方Thresholds mode选择Absolute，因为采集器采集为通会返回1，不通为0，所以这样设置大于0.5会显示绿色，即为节点通的颜色表示，然后点击右上角保存，到这里联通性面板也完成了
 ```
+
+##效果如下
+
+![[_cgi-bin_mmwebwx-bin_webwxgetmsgimg__&MsgID=3935405590450310758&skey=@crypt_d63a708a_6d83297b7a19cac8ff6163acfbce2191&mmweb_appid=wx_webfilehelper.jpeg|613]]
+![[_cgi-bin_mmwebwx-bin_webwxgetmsgimg__&MsgID=2466336573306755515&skey=@crypt_d63a708a_6d83297b7a19cac8ff6163acfbce2191&mmweb_appid=wx_webfilehelper 1.jpeg]]
+
 ## License
 
 MIT
