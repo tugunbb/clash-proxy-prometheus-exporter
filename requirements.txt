@@ -1,0 +1,4 @@
+prometheus-client>=0.20.0
+requests>=2.31.0
+urllib3<2
+PyYAML>=6.0
