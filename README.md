@@ -38,8 +38,8 @@ python clash_proxy_exporter.py
 ## 如何使用
 
 - 采集器要配合prometheus和grafana使用，并且一个订阅要独占一个clash API
-- 首先把订阅到配置文件下载到本地，可以先把订阅url导入到Flclash中，然后在Flclash导出，省去自己转换格式到步骤
-- 在订阅配置文件中设置port、socks-port、redir-port、mixed-port，这四个有的订阅会缺少一两个，只设置订阅中有的就行了，保证端口可用即可
+- 首先把订阅的配置文件下载到本地，可以先把订阅url导入到Flclash中，然后在Flclash导出配置文件，省去自己转换格式到步骤
+- 在订阅配置文件中设置port、socks-port、redir-port、mixed-port，这四个参数有的订阅会缺少一两个，只设置订阅中有的就行了，保证端口可用即可
 - 然后在配置文件中设置external-controller为：127.0.0.1:9091（端口换成一个可用的即可）
 - 接着运行clash API
 
@@ -59,7 +59,7 @@ EXPORTER_PORT=9900 CLASH_API_URL=http://127.0.0.1:9091 python3 clash_proxy_expor
 
 ```bash
 vim /opt/homebrew/etc/prometheus.yml     #（看系统而定，这里展示macOS系统）
-#直接换行添加
+#直接在文件末尾添加：
   - job_name: clash_proxy_exporter
     static_configs:
       - targets: ["127.0.0.1:9901"]   #海豚湾 clashapi：9091，采集器：9901
@@ -74,7 +74,7 @@ vim /opt/homebrew/etc/prometheus.yml     #（看系统而定，这里展示macOS
       .
 ```
 
-- 修改完成后访问浏览器访问prometheus：127.0.0.1:9090，观察prometheus获取数据是否正常，target health中clash_proxy_exporter的每一个labels是否state为up
+- 修改完成后访问浏览器访问prometheus：127.0.0.1:9090，观察prometheus获取数据是否正常，target health中clash_proxy_exporter的每一个labels是否state为up，多刷新几次
 - 接着打开grafana，浏览器访问127.0.0.1:3000
 
 ```bash
@@ -86,7 +86,7 @@ vim /opt/homebrew/etc/prometheus.yml     #（看系统而定，这里展示macOS
 添加完数据源后选择Dashboards，点击new，新建一个dashboard，Add visualization
 数据源选择prometheus
 然后点击back to dashboard
-点击右上角Settings，选择Variables，添加一个变量
+点击右上角Settings，选择Variables，添加一个变量，方便切换不同变量查看订阅的表现
 General中Name填入subscription
 Query options中选择data source为prometheus，Query type为Label values，Label*选择subcription，Metric选择clash_proxy_delay_ms，然后点击右上角Save dashboard保存
 
