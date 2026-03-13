@@ -105,6 +105,13 @@ Legend填入{{proxy}}，然后点击Run queries
 在右侧Thresholds栏删掉已有的指标，选择Add threshold，填入0.5，颜色选择绿色，Base的颜色选择红色，下方Thresholds mode选择Absolute，因为采集器采集为通会返回1，不通为0，所以这样设置大于0.5会显示绿色，即为节点通的颜色表示，然后点击右上角保存，到这里联通性面板也完成了
 ```
 
+#### 以下是面板效果
+
+![示例](images\1.png)
+
+![示例](images\2.png)
+
 ## License
 
 MIT
+
