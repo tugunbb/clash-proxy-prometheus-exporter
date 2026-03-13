@@ -107,9 +107,9 @@ Legend填入{{proxy}}，然后点击Run queries
 
 #### 以下是面板效果
 
-![示例](images\1.png)
+![示例](images/1.png)
 
-![示例](images\2.png)
+![示例](images/2.png)
 
 ## License
 
